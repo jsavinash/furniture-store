@@ -2,6 +2,7 @@
 import {createEntityAdapter, createReducer} from '@reduxjs/toolkit';
 import BookActionTypes from './book.action-type';
 import {IBook} from './book.model';
+import {RootState} from '../../app/reducer';
 
 /**
  * A noop action. There are situations where we have to perform side-effect without
@@ -22,7 +23,7 @@ export const bookReducers = {};
  * @param {Object} state The job state.
  */
 bookReducers[BookActionTypes.ADD_BOOK] = function (state, action) {
-  let {books} = action.payload;
+  let books = action.payload;
   return bookEntityAdapter.addMany(state, books);
 };
 
@@ -33,5 +34,12 @@ bookReducers[BookActionTypes.RESET_BOOKS] = function (state) {
 bookReducers[BookActionTypes.REMOVE_BOOK_BY_ID] = function () {};
 
 bookReducers[BookActionTypes.UPDATE_BOOK] = function () {};
+
+/**
+ * State Selector to expose to components.
+ */
+export const {selectAll: selectAllBooks} = bookEntityAdapter.getSelectors(
+  (state: RootState) => state.book,
+);
 
 export default createReducer(jobInitialState, bookReducers);
