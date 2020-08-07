@@ -1,6 +1,6 @@
 {
   "hooks": {
-    "pre-push": "npm run lint",
+    "pre-push": "npm run lint && validate-format",
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
   }
 }
