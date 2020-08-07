@@ -1,0 +1,81 @@
+{
+  "moduleDirectories": ["node_modules", "src"],
+  "cacheDirectory": "/var/tmp/jest_cache",
+  "mapCoverage": true,
+  "snapshotSerializers": ["enzyme-to-json/serializer"],
+  "collectCoverage": true,
+  "coverageThreshold": {
+    "global": {
+      "branches": 80,
+      "functions": 80,
+      "lines": 80,
+      "statements": -25
+    }
+  },
+  "collectCoverageFrom": [
+    "src/components/**/*.{tsx}",
+    "!**/node_modules/**",
+    "!node_modules/**",
+    "!src/components/index.tsx",
+    "!src/components/utils/**"
+  ],
+  "coverageReporters": [
+    "json",
+    "lcov",
+    "text",
+    "html",
+    "json-summary"
+  ],
+  "setupFiles": [
+    "<rootDir>/config/polyfills.js"
+  ],
+  "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.ts",
+  "testMatch": [
+    "<rootDir>/src/**/__tests__/**/*.(j|t)s?(x)",
+    "<rootDir>/src/**/?(*.)(spec|test).(j|t)s?(x)"
+  ],
+  "testEnvironment": "node",
+  "testURL": "http://localhost",
+  "transform": {
+    "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
+    "^.+\\.tsx?$": "<rootDir>/config/jest/typescriptTransform.js",
+    "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+    "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+  },
+  "transformIgnorePatterns": [
+    "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|ts|tsx)$"
+  ],
+  "moduleNameMapper": {
+    "^react-native$": "react-native-web",
+    "@components": "<rootDir>/src/components",
+    "@metadataJson": "<rootDir>/src/docs/metadata.json",
+    "@atoms/(.*)": "<rootDir>/src/components/atoms/$1",
+    "@molecules/(.*)": "<rootDir>/src/components/molecules/$1",
+    "@compounds/(.*)": "<rootDir>/src/components/compounds/$1",
+    "@mixtures/(.*)": "<rootDir>/src/components/mixtures/$1",
+    "@utils/(.*)": "<rootDir>/src/components/utils/$1",
+    "^src/(.*)": "<rootDir>/src/$1",
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+  },
+  "moduleFileExtensions": [
+    "web.ts",
+    "ts",
+    "web.tsx",
+    "tsx",
+    "web.js",
+    "js",
+    "web.jsx",
+    "jsx",
+    "json",
+    "node",
+    "mjs",
+    "scss"
+  ],
+  "globals": {
+    "ts-jest": {
+      "disableSourceMapSupport": true,
+      "tsConfigFile": "./tsconfig.test.json"
+    },
+    "mapCoverage": true
+  }
+}
