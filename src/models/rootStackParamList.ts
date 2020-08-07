@@ -1,6 +1,7 @@
-import {ILogin} from './login';
-
 export type RootStackParamList = {
-  Login: ILogin;
-  Details: undefined;
+  Book: null;
+  BookDetail: null;
+  AddBook: null;
+  UpdateBook: null;
+  DeleteBook: null;
 };

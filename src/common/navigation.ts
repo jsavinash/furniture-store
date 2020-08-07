@@ -1,10 +1,22 @@
 export const navigationParams = {
-  login: {
-    name: 'Login',
-    title: 'Login',
+  book: {
+    name: 'Books',
+    title: 'Books',
   },
-  details: {
-    name: 'Details',
-    title: 'Details',
+  bookDetail: {
+    name: 'BookDetail',
+    title: 'Book Detail',
+  },
+  addBook: {
+    name: 'AddBook',
+    title: 'Add Book',
+  },
+  deleteBook: {
+    name: 'DeleteBook',
+    title: 'Delete Book',
+  },
+  updateBook: {
+    name: 'UpdateBook',
+    title: 'Update Book',
   },
 };
