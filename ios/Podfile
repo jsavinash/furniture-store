@@ -3,12 +3,12 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'westernAuto' do
+target 'furnitureStore' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
 
-  target 'westernAutoTests' do
+  target 'furnitureStoreTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -23,10 +23,10 @@ target 'westernAuto' do
   end
 end
 
-target 'westernAuto-tvOS' do
-  # Pods for westernAuto-tvOS
+target 'furnitureStore-tvOS' do
+  # Pods for furnitureStore-tvOS
 
-  target 'westernAuto-tvOSTests' do
+  target 'furnitureStore-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
